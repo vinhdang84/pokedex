@@ -1,12 +1,15 @@
 ##Pokémon Craft Demo
 
+
 ###Description:
+
 The purpose of this document is to serve as your guide in building out the Pokedex of San Diego. Follow
 the requirements, guidelines, and designs as you get to showcase your abilities in building a web
 application.
 
 
 ###Technological Requirements:
+
 1. Create a mobile first application that works in every any modern browser (Chrome, Safari,
 Firefox, Edge).
 2. Use the attached wireframes when creating the layout of the application.
@@ -31,6 +34,7 @@ application load as fast possible, and as little as possible.
 
 
 ###Data sources:
+
 Use the following rest APIs when creating the application.
 • https://pokeapi.co/
 o Use the v2 API when getting information regarding the list of Pokémon, their
@@ -51,6 +55,7 @@ o Use this in the request header:
 ##Features & Designs:
 
 ###Required Features:
+
 • The application should be mobile responsive (see designs below)
 • Although The application has no concept of authentication, the application should allow the
 User to “save” Pokémon that they have caught, and it should persist within the browser. Please
@@ -62,6 +67,7 @@ APIS detailed above (data sources section of this document).
 
 
 ###Main Page:
+
 • This page will show the list of all 151 original Pokémon.
 o Each item will show their image, and the name of the Pokémon.
 § The image URL can be found in the API.
@@ -74,20 +80,25 @@ no API for this)
 • When clicking on a Pokémon it will take you to the Pokémon Detail Page (see designs
 below in the Pokémon Detail Page section).
 
+
 ![main](./screenshots/mainPage.png)
 
 ##Main Page (continued):
+
 ![mainPageContinued](./screenshots/mainPageContinued.png)
 
 ##Main Page Mobile Layout:
+
 ![mainPageMobileLayout](./screenshots/mainPageMobileLayout.png)
 
 ##Main Page Mobile Layout (continued):
+
 ![mainPageMobileLayoutContinued](./screenshots/mainPageMobileLayoutContinued.png)
 
 
 
 ###Pokémon Detail Page:
+
 • This Page will show more detail about the selected Pokémon
 o Show information about the Pokémon’s Height, weight, type (all found in the
 API)
@@ -101,6 +112,7 @@ Saved Pokémon).
 ![pokemonDetailPage](./screenshots/pokemonDetailPage.png)
 
 ##Pokémon Detail Page Mobile:
+
 • This page shows the same data as the Desktop designs, except each data is divided into
 3 sections
 o Info – Show Information about the Pokémon.
@@ -110,13 +122,16 @@ o Abilities – List out the abilities of the Pokémon.
 ![pokemonDetailPageMobile](./screenshots/pokemonDetailPageMobile.png)
 
 ##Pokémon Detail Page Mobile (continued):
+
 ![pokemonDetailPageMobileLocation](./screenshots/pokemonDetailPageMobileLocation.png)
 
 ##Pokémon Detail Page Mobile (continued):
+
 ![pokemonDetailPageMobileAbilities](./screenshots/pokemonDetailPageMobileAbilities.png)
 
 
 ##Final Output:
+
 • Hosting the site is optional, at the minimum, please have your site ready to run on your
 local machine.
 • Upload your work to a private Github repo and upload a ReadMe.file
