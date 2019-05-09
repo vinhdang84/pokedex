@@ -1,3 +1,5 @@
+Demo: http://vinh-pokedex.s3-website-us-west-2.amazonaws.com/
+
 ## Pokémon Craft Demo
 
 
