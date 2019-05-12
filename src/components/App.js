@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    getJson('https://pokeapi.co/api/v2/pokemon/?limit=20')
+    getJson('https://pokeapi.co/api/v2/pokemon/?limit=151')
       .then(({ results: pokes }) => Promise.all(pokes.map(({ url }) => getJson(url))))
       .then(pokes => pokes.map(shortPokeDescription))
       .then(pokemonList =>
