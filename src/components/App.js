@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/App.css';
+import './sass/app.scss';
 
 const capitalize = ([first, ...rest]) =>
   `${first.toUpperCase()}${rest.join('')}`;
@@ -12,14 +12,17 @@ const shortPokeDescription = ({ name, id, sprites: { front_default } }) => ({
   url: front_default,
 })
 
-class App extends React.Component {
+const Pokemon = (props) => <h4>{props.pokemon.name}</h4>
+
+class App extends Component {
   state = {
     loading: true,
-    pokemonList: []
+    pokemonList: [],
+    pokes: []
   };
 
   async componentDidMount() {
-    getJson('https://pokeapi.co/api/v2/pokemon/?limit=151')
+    getJson('https://pokeapi.co/api/v2/pokemon/?limit=20')
       .then(({ results: pokes }) => Promise.all(pokes.map(({ url }) => getJson(url))))
       .then(pokes => pokes.map(shortPokeDescription))
       .then(pokemonList =>
@@ -31,23 +34,38 @@ class App extends React.Component {
       .catch(error => console.log('parsing failed', error));
   }
 
+  filter(e) {
+    this.setState({ filter: e.target.value })
+  }
+
   render() {
-    const { loading, pokemonList } = this.state;
+    let pokemons = this.state.pokemonList;
+    let loading = this.state.loading;
+    if (this.state.filter) {
+      pokemons = pokemons.filter(pokemon =>
+        pokemon.name.toLowerCase()
+          .includes(this.state.filter.toLowerCase())
+      )
+    }
+
     return (
       <div>
-        {!loading && pokemonList.length > 0
-          ? pokemonList.map(({ name, url, id }) => (
-            <div key={name}>
-              {id}
-              <p>
-                {name}
-                <br />
+        <div className="search">
+          <input text="text"
+            onChange={this.filter.bind(this)} />
+        </div>
+        <div>
+          {!loading && pokemons.length > 0
+            ? pokemons.map(({ name, url, id }) => (
+              <h4 key={name} className="poke-card" >
                 <img alt={name} src={url} />
-              </p>
-            </div>
-          ))
-          : null}
-      </div>
+                <br />
+                {name}
+              </h4>
+            ))
+            : null}
+        </div>
+      </div >
     );
   }
 }
